@@ -10,35 +10,30 @@
 </script>
 <style>
   .control-bar {
-  position:fixed;
-  top:16px;
-  right:16px;
-  display:flex;
-  gap:10px;
-  z-index:9999;
-}
-
-.control-btn {
-  border:0;
-  background:#17392b;
-  color:#fff;
-  padding:10px 14px;
-  border-radius:10px;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-  box-shadow:0 4px 14px rgba(0,0,0,.18);
-}
-
-.control-btn:hover {
-  background:#1f6a3b;
-}
-
-@media print {
-  .control-bar {
-    display:none !important;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 10px;
+    z-index: 9999;
   }
-}
+
+  .control-btn {
+    border: 0;
+    background: #17392b;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  }
+
+  .control-btn:hover {
+    background: #1f6a3b;
+  }
+
   :root {
     --green:#1f6a3b;
     --green-dark:#184f2c;
@@ -294,14 +289,115 @@
     display:flex;
   }
 
+  /* 1. sayfa için kompakt görünüm */
+  .page:first-of-type .sidebar {
+    padding:9mm 7mm 7mm;
+  }
+
+  .page:first-of-type .photo {
+    width:33mm;
+    height:33mm;
+    margin:0 auto 5mm;
+  }
+
+  .page:first-of-type .side-section {
+    margin-bottom:4.2mm;
+  }
+
+  .page:first-of-type .side-title {
+    font-size:9.6pt;
+    margin:0 0 1.6mm;
+    padding-bottom:1.2mm;
+  }
+
+  .page:first-of-type .contact-item,
+  .page:first-of-type .skill-item,
+  .page:first-of-type .lang-item {
+    margin-bottom:1.6mm;
+    font-size:8.8pt;
+    line-height:1.2;
+  }
+
+  .page:first-of-type .main {
+    padding:9mm 10mm 7mm 9mm;
+  }
+
+  .page:first-of-type .name {
+    font-size:20pt;
+    line-height:1;
+  }
+
+  .page:first-of-type .top-rule {
+    margin:2.5mm 0 3.5mm;
+  }
+
+  .page:first-of-type .summary {
+    margin:0 0 2.2mm;
+    font-size:9.2pt;
+    line-height:1.28;
+  }
+
+  .page:first-of-type .section {
+    margin-bottom:3.5mm;
+  }
+
+  .page:first-of-type .section-title {
+    margin:0 0 2mm;
+    font-size:13pt;
+  }
+
+  .page:first-of-type .entry {
+    gap:2.8mm;
+    padding:0 0 2mm;
+    margin-bottom:2mm;
+  }
+
+  .page:first-of-type .entry-meta {
+    font-size:8.9pt;
+  }
+
+  .page:first-of-type .entry-org {
+    font-size:10.4pt;
+    margin:0 0 .3mm;
+  }
+
+  .page:first-of-type .entry-role {
+    font-size:10.7pt;
+  }
+
+  .page:first-of-type .entry-sub {
+    margin:0 0 1mm;
+    font-size:8.7pt;
+  }
+
+  .page:first-of-type ul.bullets {
+    padding-left:3.5mm;
+  }
+
+  .page:first-of-type ul.bullets li {
+    margin-bottom:.7mm;
+    font-size:8.95pt;
+    line-height:1.2;
+  }
+
   @page {
     size:A4;
     margin:0;
   }
 
   @media print {
-    body { background:#fff; }
-    .doc { padding:0; }
+    body {
+      background:#fff;
+    }
+
+    .control-bar {
+      display:none !important;
+    }
+
+    .doc {
+      padding:0;
+    }
+
     .page {
       margin:0;
       box-shadow:none;
@@ -309,7 +405,6 @@
     }
   }
 </style>
-
 <script>
   function applyLanguage(lang) {
     document.body.classList.remove("lang-tr", "lang-en");
