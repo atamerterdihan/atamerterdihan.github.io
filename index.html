@@ -8,8 +8,37 @@
 <script>
   const LANG = "tr"; // "tr" veya "en"
 </script>
-
 <style>
+  .control-bar {
+  position:fixed;
+  top:16px;
+  right:16px;
+  display:flex;
+  gap:10px;
+  z-index:9999;
+}
+
+.control-btn {
+  border:0;
+  background:#17392b;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.18);
+}
+
+.control-btn:hover {
+  background:#1f6a3b;
+}
+
+@media print {
+  .control-bar {
+    display:none !important;
+  }
+}
   :root {
     --green:#1f6a3b;
     --green-dark:#184f2c;
@@ -282,13 +311,64 @@
 </style>
 
 <script>
+  function applyLanguage(lang) {
+    document.body.classList.remove("lang-tr", "lang-en");
+    document.body.classList.add(lang === "en" ? "lang-en" : "lang-tr");
+    document.documentElement.lang = lang === "en" ? "en" : "tr";
+  }
+
+  function setLanguage(lang) {
+    applyLanguage(lang);
+  }
+
+  function getTodayString() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+  function downloadPDF() {
+    const element = document.querySelector(".doc");
+    const currentLangIsEN = document.body.classList.contains("lang-en");
+    const langSuffix = currentLangIsEN ? "en" : "tr";
+    const filename = `ata_mert_erdihan_cv_${langSuffix}_${getTodayString()}.pdf`;
+
+    const opt = {
+      margin: 0,
+      filename: filename,
+      image: { type: "jpeg", quality: 1 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        scrollY: 0
+      },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait"
+      },
+      pagebreak: {
+        mode: ["css", "legacy"]
+      }
+    };
+
+    html2pdf().set(opt).from(element).save();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add(LANG === "en" ? "lang-en" : "lang-tr");
-    document.documentElement.lang = LANG === "en" ? "en" : "tr";
+    applyLanguage(LANG);
   });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
+<div class="control-bar">
+  <button class="control-btn" onclick="setLanguage('tr')">TR</button>
+  <button class="control-btn" onclick="setLanguage('en')">EN</button>
+  <button class="control-btn" onclick="downloadPDF()">PDF İndir</button>
+</div>  
 <div class="doc">
 
   <!-- PAGE 1 -->
