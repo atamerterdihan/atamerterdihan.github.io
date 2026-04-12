@@ -329,40 +329,45 @@
     return `${year}-${month}-${day}`;
   }
 
-  function downloadPDF() {
-    const element = document.querySelector(".doc");
+  async function downloadPDF() {
     const currentLangIsEN = document.body.classList.contains("lang-en");
     const langSuffix = currentLangIsEN ? "en" : "tr";
     const filename = `ata_mert_erdihan_cv_${langSuffix}_${getTodayString()}.pdf`;
 
-    const opt = {
-      margin: 0,
-      filename: filename,
-      image: { type: "jpeg", quality: 1 },
-      html2canvas: {
+    const pages = document.querySelectorAll(".page");
+    const pdf = new jspdf.jsPDF({
+      orientation: "portrait",
+      unit: "mm",
+      format: [210, 297]
+    });
+
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+
+      const canvas = await html2canvas(page, {
         scale: 2,
         useCORS: true,
-        scrollY: 0
-      },
-      jsPDF: {
-        unit: "mm",
-        format: "a4",
-        orientation: "portrait"
-      },
-      pagebreak: {
-        mode: ["css", "legacy"]
-      }
-    };
+        backgroundColor: "#ffffff"
+      });
 
-    html2pdf().set(opt).from(element).save();
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+
+      if (i > 0) {
+        pdf.addPage([210, 297], "portrait");
+      }
+
+      pdf.addImage(imgData, "JPEG", 0, 0, 210, 297);
+    }
+
+    pdf.save(filename);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     applyLanguage(LANG);
   });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script></head>
 <body>
 <div class="control-bar">
   <button class="control-btn" onclick="setLanguage('tr')">TR</button>
