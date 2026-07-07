@@ -149,6 +149,14 @@
     text-transform:uppercase;
   }
 
+  .headline {
+    margin:1.5mm 0 0;
+    color:#2e7d4f;
+    font-size:11.1pt;
+    font-weight:700;
+    line-height:1.25;
+  }
+
   .top-rule {
     height:3px;
     background:var(--green);
@@ -327,6 +335,11 @@
     line-height:1;
   }
 
+  .page:first-of-type .headline {
+    font-size:10.4pt;
+    margin-top:1.1mm;
+  }
+
   .page:first-of-type .top-rule {
     margin:2.5mm 0 3.5mm;
   }
@@ -462,19 +475,19 @@
   });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script></head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
 <body>
 <div class="control-bar">
   <button class="control-btn" onclick="setLanguage('tr')">TR</button>
   <button class="control-btn" onclick="setLanguage('en')">EN</button>
   <button class="control-btn" onclick="downloadPDF()">PDF İndir</button>
-</div>  
+</div>
 <div class="doc">
 
   <!-- PAGE 1 -->
-    <!-- PAGE 1 -->
-<section class="page">
-  <aside class="sidebar">
+  <section class="page">
+    <aside class="sidebar">
       <div class="photo">
         <img src="ata.png" alt="Ata Mert Erdihan" />
       </div>
@@ -548,20 +561,36 @@
             <span class="tr">Araçlar</span>
             <span class="en">Tools</span>
           </span>
-          <span class="value">Jira, API testing, SQL querying, MS Office</span>
+          <span class="value">Jira, Postman, SQL/MySQL, Excel, MS Office, SSH/Telnet</span>
         </div>
         <div class="skill-item">
-          <span class="label">Testing</span>
+          <span class="label">
+            <span class="tr">Test ve Doğrulama</span>
+            <span class="en">Testing &amp; Validation</span>
+          </span>
           <span class="value">
-            <span class="tr">Manuel test, firmware doğrulama, sürüm doğrulama, hata takibi, test senaryolarının uygulanması</span>
-            <span class="en">Manual testing, firmware validation, release validation, defect tracking, test scenario execution</span>
+            <span class="tr">Manuel test, sistem testi, senaryo bazlı doğrulama, firmware ve sürüm doğrulama, hata yeniden üretimi</span>
+            <span class="en">Manual testing, system testing, scenario-based validation, firmware and release validation, defect reproduction</span>
           </span>
         </div>
         <div class="skill-item">
-          <span class="label">Troubleshooting</span>
+          <span class="label">
+            <span class="tr">Teknik Destek</span>
+            <span class="en">Technical Support</span>
+          </span>
           <span class="value">
-            <span class="tr">SSH, log analizi, kök neden analizi, üretim ortamı sorunlarının incelenmesi</span>
-            <span class="en">SSH, log analysis, root cause analysis, production issue investigation</span>
+            <span class="tr">Üretim desteği, incident investigation, root cause analysis desteği, eskalasyon ve müşteri takibi</span>
+            <span class="en">Production support, incident investigation, root cause analysis support, escalation and customer follow-up</span>
+          </span>
+        </div>
+        <div class="skill-item">
+          <span class="label">
+            <span class="tr">API ve Veri</span>
+            <span class="en">API &amp; Data</span>
+          </span>
+          <span class="value">
+            <span class="tr">REST API request/response kontrolü, SQL sorguları, üretim verisi inceleme, Excel tabanlı raporlama</span>
+            <span class="en">REST API request/response checks, SQL querying, production-data review, Excel-based reporting</span>
           </span>
         </div>
         <div class="skill-item">
@@ -570,16 +599,16 @@
             <span class="en">Systems</span>
           </span>
           <span class="value">
-            <span class="tr">Wi-Fi, mesh ağları, cihaz-bulut bağlantısı, gömülü ve ağ bağlantılı sistemler</span>
-            <span class="en">Wi-Fi, mesh, device-to-cloud connectivity, embedded and networked systems</span>
+            <span class="tr">Wi-Fi, mesh ağları, CPE, ISP ortamları, bağlantılı cihazlar, cihaz-bulut iletişimi</span>
+            <span class="en">Wi-Fi, mesh networks, CPE, ISP environments, connected devices, device-to-cloud communication</span>
           </span>
         </div>
         <div class="skill-item">
           <span class="label">
-            <span class="tr">Programlama</span>
-            <span class="en">Programming</span>
+            <span class="tr">Programlama Temeli</span>
+            <span class="en">Programming Foundation</span>
           </span>
-          <span class="value">Python, JavaScript, C, C++</span>
+          <span class="value">Python, JavaScript, C, C++, Swift</span>
         </div>
       </div>
 
@@ -588,69 +617,70 @@
           <span class="tr">Güçlü Yönler</span>
           <span class="en">Core Strengths</span>
         </h3>
-        <div class="skill-item"><span class="value"><span class="tr">Problem çözme</span><span class="en">Problem solving</span></span></div>
-        <div class="skill-item"><span class="value"><span class="tr">Yapılandırılmış çalışma disiplini</span><span class="en">Structured execution</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Analitik problem çözme</span><span class="en">Analytical problem solving</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Yapılandırılmış takip disiplini</span><span class="en">Structured follow-up discipline</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Müşteri odaklı teknik iletişim</span><span class="en">Customer-focused technical communication</span></span></div>
         <div class="skill-item"><span class="value"><span class="tr">Ekipler arası koordinasyon</span><span class="en">Cross-functional coordination</span></span></div>
-        <div class="skill-item"><span class="value"><span class="tr">Paydaş iletişimi</span><span class="en">Stakeholder communication</span></span></div>
         <div class="skill-item"><span class="value"><span class="tr">Sahiplenme yaklaşımı</span><span class="en">Ownership mindset</span></span></div>
       </div>
 
       <div class="side-section">
         <h3 class="side-title">
-          <span class="tr">Referans</span>
-          <span class="en">Reference</span>
+          <span class="tr">Ek Bilgiler</span>
+          <span class="en">Additional</span>
         </h3>
-        <div class="skill-item"><span class="value">Oğuz Demirtaş</span></div>
-        <div class="skill-item"><span class="value"><span class="tr">Baş(Principal) Saha Uygulama Mühendisi</span><span class="en">Principal Field Application Engineer</span></span></div>
-        <div class="skill-item"><span class="value"><span class="tr">AirTies Kablosuz İletişim</span><span class="en">AirTies Wireless Networks</span></span></div>
-        <div class="skill-item"><span class="value">+90 530 977 03 34</span></div>
-      <div>
+        <div class="skill-item"><span class="value"><span class="tr">Askerlik hizmeti tamamlandı</span><span class="en">Military service completed</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">B sınıfı ehliyet, aktif sürücü</span><span class="en">Class B driving licence, active driver</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Seyahat engeli yok</span><span class="en">Available for travel</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Türkiye'de çalışma hakkı var</span><span class="en">Authorized to work in Turkiye</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Hemen başlayabilir</span><span class="en">Available immediately</span></span></div>
+      </div>
     </aside>
 
     <main class="main">
       <h1 class="name">Ata Mert Erdihan</h1>
+      <p class="headline">
+        <span class="tr">Elektrik ve Elektronik Mühendisi | Saha Uygulamaları, Teknik Destek ve Sistem Doğrulama</span>
+        <span class="en">Electrical &amp; Electronics Engineer | Field Applications, Technical Support &amp; System Validation</span>
+      </p>
       <div class="top-rule"></div>
 
       <p class="summary">
         <span class="tr">
-          Elektrik ve Elektronik Mühendisi olarak bağlantılı cihazlar ve ISP ortamlarında
-          <strong>test, doğrulama, hata ayıklama, sürüm desteği ve üretim operasyonları</strong>
-          alanlarında uygulamalı deneyime sahiptir. Karmaşık teknik sorunları analiz etme,
-          yazılım ve firmware davranışlarını doğrulama ve büyük ölçekli canlı sistemlerde
-          stabil sürüm süreçlerini destekleme konusunda güçlü bir geçmişe sahiptir.
+          Elektrik ve Elektronik Mühendisi olarak AirTies'ta <strong>5+ yıl müşteri odaklı teknik mühendislik</strong>
+          deneyimine sahiptir. Saha uygulamaları, L2 teknik destek, sistem ve firmware doğrulama,
+          üretim desteği, rollout takibi ve bağlantılı cihaz/ISP ortamlarında teknik sorun analizi alanlarında çalışmıştır.
         </span>
         <span class="en">
-          Electrical and Electronics Engineer with hands-on experience in
-          <strong>testing, validation, debugging, release support, and production operations</strong>
-          for connected devices and ISP environments. Proven ability to investigate complex issues,
-          validate software and firmware behavior, and support stable releases across large-scale live systems.
+          Electrical and Electronics Engineer with <strong>5+ years of customer-facing technical engineering</strong>
+          experience at AirTies across field applications, L2 technical support, system and firmware validation,
+          production support, rollout monitoring, and technical issue analysis in connected-device and ISP environments.
         </span>
       </p>
 
       <p class="summary">
         <span class="tr">
-          <strong>Manuel test, ürün yazılımı (firmware) doğrulama, hata analizi, API testleri ve SQL tabanlı veri inceleme</strong>
-          konularında yetkindir. Mühendislik, ürün, cloud ve müşteri odaklı ekiplerle birlikte çalışarak
-          <strong>yazılım kalitesi, sistem güvenilirliği ve operasyonel hazırlık</strong> alanlarında katkı sağlamıştır.
+          Yaklaşık <strong>100 cihazlık pilot aşamalardan 40.000+ aktif üretim cihazına</strong> ölçeklenen dağıtımları
+          desteklemiş; log analizi, SSH/Telnet kontrolleri, Postman API doğrulaması, SQL/MySQL veri inceleme ve Jira
+          üzerinden yapılandırılmış takip ile müşteri etkisi yaratan teknik sorunların çözüm süreçlerine katkı sağlamıştır.
         </span>
         <span class="en">
-          Strong background in <strong>manual testing, firmware validation, defect investigation, API testing,
-          SQL-based analysis, and cross-functional execution</strong>. Experienced in working with engineering,
-          product, cloud, and customer-facing teams to improve release quality, system reliability,
-          and operational readiness.
+          Supported deployments scaling from approximately <strong>100 pilot devices to 40,000+ active production devices</strong>;
+          contributed to customer-impacting issue resolution through log analysis, SSH/Telnet checks, Postman API verification,
+          SQL/MySQL data review, and structured Jira follow-up.
         </span>
       </p>
 
       <p class="summary">
         <span class="tr">
-          <strong>QA / Test Mühendisliği / Doğrulama / Teknik Operasyonlar / Destek Mühendisliği / Sürüm ve Üretim Desteği</strong>
-          rollerine uygundur. Hızlı tempolu teknik ortamlarda <strong>pratik problem çözme yaklaşımı ve güçlü sahiplenme anlayışı</strong>
-          ile öne çıkar.
+          Product, Cloud, QA, Engineering ve müşteri ekipleri arasında teknik köprü görevi üstlenmiş; AirTies deneyimi boyunca
+          <strong>10M+ cihazlık Tier-1 ABD telekom müşterisi</strong> için her QBR döneminde kullanılan Jira ticket trend analizlerine
+          katkı sağlayarak tekrarlayan sorun kategorileri ve operasyonel eğilimleri görünür kılmıştır.
         </span>
         <span class="en">
-          Well suited for roles across <strong>QA / Test Engineering / Validation / Technical Operations /
-          Support Engineering / Release &amp; Production Support</strong>, with a practical problem-solving
-          approach and strong ownership in fast-moving technical environments.
+          Served as a technical bridge between Product, Cloud, QA, Engineering, and customer stakeholders; throughout his
+          AirTies experience, contributed to Jira ticket-trend analyses used in each QBR for a <strong>Tier-1 US telecom customer
+          operating a 10M+ device environment</strong>, making recurring issue categories and operational patterns visible.
         </span>
       </p>
 
@@ -663,34 +693,38 @@
         <div class="entry">
           <div class="entry-meta">2020 - 2025</div>
           <div>
-            <span class="tr"><p class="entry-org">AirTies Kablosuz İletişim</p></span>
-            <span class="en"><p class="entry-org">AirTies Wireless Networks</p></span>
-            <span class="en"><p class="entry-role">Experienced Field Application Engineer</p></span>
-            <span class="tr"><p class="entry-role">Deneyimli Saha Uygulama Mühendisi</p></span>
+            <p class="entry-org">
+              <span class="tr">AirTies Kablosuz İletişim</span>
+              <span class="en">AirTies Wireless Networks</span>
+            </p>
+            <p class="entry-role">
+              <span class="tr">Experienced Field Application Engineer</span>
+              <span class="en">Experienced Field Application Engineer</span>
+            </p>
             <p class="entry-sub">
               <span class="tr">Eyl 2024 - Kas 2025 | İzmir, Türkiye</span>
               <span class="en">Sep 2024 - Nov 2025 | Izmir, Turkiye</span>
             </p>
             <ul class="bullets">
               <li>
-                <span class="tr"><strong>Üretim Sorumluluğu:</strong> Tier-1 ISP ortamında uçtan uca üretim operasyonlarını yöneterek büyük ölçekli cihaz dağıtımları ve canlı müşteri sistemlerinde hizmet sürekliliğini destekledi.</span>
-                <span class="en"><strong>Production Ownership:</strong> Owned end-to-end production operations for a Tier-1 ISP environment, supporting service continuity across large-scale device deployments and live customer systems.</span>
+                <span class="tr">Tier-1 ISP müşterilerini etkileyen üretim sorunlarında teknik takip yürüttü; müşteri paydaşları ile Product, Cloud, QA ve Engineering ekipleri arasında köprü görevi üstlendi.</span>
+                <span class="en">Coordinated technical follow-up for customer-impacting production issues, serving as a bridge between Tier-1 ISP stakeholders and internal Product, Cloud, QA, and Engineering teams.</span>
               </li>
               <li>
-                <span class="tr"><strong>Sürüm Hazırlığı ve Doğrulama:</strong> Firmware ve özellik sürümlerini rollout öncesinde ve sırasında değerlendirerek dağıtım risklerini belirledi, beklenen davranışı doğruladı ve daha güvenli üretim geçişlerini destekledi.</span>
-                <span class="en"><strong>Validation &amp; Release Readiness:</strong> Evaluated firmware and feature releases before and during rollout, identifying deployment risks, validating expected behavior, and supporting safer production launches.</span>
+                <span class="tr">Log analizi, SSH/Telnet kontrolleri, Postman request/response doğrulaması, SQL/MySQL veri inceleme ve sistem davranışı analizi ile yüksek etkili bağlantılı cihaz sorunlarını araştırdı.</span>
+                <span class="en">Investigated high-impact connected-device issues using log analysis, SSH/Telnet checks, Postman request/response verification, SQL/MySQL data review, and system behavior analysis.</span>
               </li>
               <li>
-                <span class="tr"><strong>Hata Analizi:</strong> Yüksek etkili üretim sorunlarını yapılandırılmış root cause analysis, log inceleme ve sistem seviyesinde troubleshooting ile analiz ederek tekrarını azaltmaya ve kararlılığı artırmaya katkı sağladı.</span>
-                <span class="en"><strong>Defect Investigation:</strong> Analyzed high-impact production issues through structured root cause analysis, log investigation, and system-level troubleshooting to reduce recurrence and improve stability.</span>
+                <span class="tr">Teknik bulguları, müşteri etkisini, öncelikleri ve takip aksiyonlarını Jira üzerinde yapılandırılmış şekilde dokümante ederek ilgili ekiplerin çözüm sürecini destekledi.</span>
+                <span class="en">Documented technical findings, customer impact, priorities, and follow-up actions in Jira to support resolution by the relevant teams.</span>
               </li>
               <li>
-                <span class="tr"><strong>Gerçek Ortam Doğrulaması:</strong> Yeni özellik ve değişikliklerin gerçek kullanım koşullarında doğrulamasını yürüttü; entegrasyon kalitesini teyit etti ve sürüm sonrası davranışları izledi.</span>
-                <span class="en"><strong>Feature Verification in Real Environments:</strong> Led validation of new features and changes under real-world conditions, confirming integration quality and monitoring post-release behavior.</span>
+                <span class="tr">AirTies'taki genel çalışma süresi boyunca, 10M+ cihazlık Tier-1 ABD telekom müşterisi için her QBR döneminde kullanılan Jira ticket trend analizlerine katkı sağladı.</span>
+                <span class="en">Across his overall AirTies tenure, contributed to Jira ticket-trend analyses used in each QBR for a Tier-1 US telecom customer operating a 10M+ device environment.</span>
               </li>
               <li>
-                <span class="tr"><strong>Kritik Vaka Koordinasyonu:</strong> Kritik durumlarda ISP paydaşları ile kurum içi mühendislik ekipleri arasında teknik köprü rolü üstlenerek daha hızlı çözüm ve daha net koordinasyon sağladı.</span>
-                <span class="en"><strong>Cross-Functional Incident Coordination:</strong> Acted as a technical bridge between ISP stakeholders and internal engineering teams during critical incidents, helping drive faster resolution and clearer execution.</span>
+                <span class="tr">Müşteri Jira ortamı ile AirTies iç Jira akışları arasında ticket alımı, aktarımı, eşleştirmesi ve izlenebilirliğini yönetti; teknik bağlamın ve sahipliğin korunmasını sağladı.</span>
+                <span class="en">Managed ticket intake, transfer, mapping, and traceability between the customer's Jira environment and AirTies' internal workflows, preserving technical context and ownership.</span>
               </li>
             </ul>
           </div>
@@ -699,32 +733,34 @@
         <div class="entry">
           <div class="entry-meta"></div>
           <div>
-            <span class="en"><p class="entry-role">Field Application Engineer</p></span>
-            <span class="tr"><p class="entry-role">Saha Uygulama Mühendisi</p></span>
+            <p class="entry-role">
+              <span class="tr">Field Application Engineer</span>
+              <span class="en">Field Application Engineer</span>
+            </p>
             <p class="entry-sub">
               <span class="tr">Mar 2022 - Ağu 2024 | İstanbul, Türkiye</span>
               <span class="en">Mar 2022 - Aug 2024 | Istanbul, Turkiye</span>
             </p>
             <ul class="bullets">
               <li>
-                <span class="tr"><strong>Büyük Ölçekli Dağıtım Desteği:</strong> Yaklaşık 100 cihazlık pilot aşamalardan <strong>40.000+ aktif cihaza</strong> kadar ölçeklenen ISP ortamlarını destekledi; rollout sağlığını ve üretim davranışını izledi.</span>
-                <span class="en"><strong>Large-Scale Deployment Support:</strong> Supported ISP environments scaling from pilot stages of around 100 devices to 40,000+ active devices, monitoring rollout health and production behavior.</span>
+                <span class="tr">Yaklaşık 100 cihazlık pilot aşamalardan <strong>40.000+ aktif üretim cihazına</strong> ölçeklenen ISP rollout süreçlerini destekledi; rollout sağlığını, cihaz davranışını ve müşteri etkisini izledi.</span>
+                <span class="en">Supported an ISP rollout from approximately 100 pilot devices to <strong>40,000+ active production devices</strong>, monitoring rollout health, device behavior, and customer impact.</span>
               </li>
               <li>
-                <span class="tr"><strong>Firmware Test ve Doğrulama:</strong> Production benzeri ve canlı ortamlarda firmware doğrulama faaliyetlerini yürüttü ve sürüm süreçlerini destekledi.</span>
-                <span class="en"><strong>Firmware Testing &amp; Validation:</strong> Executed firmware validation activities and supported release processes in production-like and live environments.</span>
+                <span class="tr">Laboratuvar, ofis, müşteri ve gerçek ev ortamlarında manuel ve senaryo bazlı doğrulama yaparak saha koşullarında görülebilecek fonksiyonel ve sistemsel sorunları geniş dağıtım öncesinde belirledi.</span>
+                <span class="en">Performed manual and scenario-based validation in lab, office, customer, and real-home environments to identify field-relevant functional and system issues before wider deployment.</span>
               </li>
               <li>
-                <span class="tr"><strong>Manuel Test ve Senaryo Kapsamı:</strong> Laboratuvar, ofis ve gerçek ev ortamlarında testler gerçekleştirerek son kullanıcı davranışını simüle etti ve saha kaynaklı sorunları geniş rollout öncesinde ortaya çıkardı.</span>
-                <span class="en"><strong>Manual Testing &amp; Scenario Coverage:</strong> Performed lab, office, and real-home testing to simulate end-user behavior and uncover field-relevant issues before wider rollout.</span>
+                <span class="tr">Firmware ve bağlantılı sistem kontrollerinde beklenen/gerçekleşen davranışı karşılaştırdı, pass/fail sonuçlarını kaydetti, hataları yeniden üretti ve teknik kanıtları QA, Cloud, Product ve Engineering ekiplerine aktardı.</span>
+                <span class="en">Executed firmware and connected-system checks, compared expected and actual behavior, recorded pass/fail outcomes, reproduced defects, and communicated technical evidence to QA, Cloud, Product, and Engineering teams.</span>
               </li>
               <li>
-                <span class="tr"><strong>Hata Ayıklama ve Analiz:</strong> Teknik sorunları loglar, davranış analizi ve sistem gözlemi üzerinden inceleyerek sorunların ayrıştırılması ve çözüm süreçlerine destek verdi.</span>
-                <span class="en"><strong>Debugging &amp; Analysis:</strong> Investigated technical issues using logs, behavioral analysis, and system observation to support defect isolation and issue resolution.</span>
+                <span class="tr">Postman ve SQL/MySQL kullanarak API davranışlarını, Jira kayıtlarını, üretim verilerini ve müşteri etkisi yaratan sorunları analiz etti.</span>
+                <span class="en">Used Postman and SQL/MySQL to analyze API behavior, Jira tickets, production data, and customer-impacting issues.</span>
               </li>
               <li>
-                <span class="tr"><strong>Sürüm Desteği:</strong> Ürün ve mühendislik ekipleriyle birlikte çalışarak, cloud ekipleriyle koordinasyon içinde sürüm hazırlığını, sistem kalitesini ve dağıtım güvenini artırdı.</span>
-                <span class="en"><strong>Release Support:</strong> Worked closely with cloud, product, and engineering teams to improve release readiness, system quality, and deployment confidence.</span>
+                <span class="tr">Kritik olaylarda gerektiğinde mesai dışı koordinasyon desteği sağladı ve paydaşlar için açık teknik durum güncellemeleri hazırladı.</span>
+                <span class="en">Provided support during critical incidents, including occasional after-hours coordination when required, and maintained clear technical status updates for stakeholders.</span>
               </li>
             </ul>
           </div>
@@ -733,28 +769,26 @@
         <div class="entry">
           <div class="entry-meta"></div>
           <div>
-            <span class="en"><p class="entry-role">Application Engineer</p></span>
-            <span class="tr"><p class="entry-role">Uygulama Mühendisi</p></span>
+            <p class="entry-role">
+              <span class="tr">Application Engineer</span>
+              <span class="en">Application Engineer</span>
+            </p>
             <p class="entry-sub">
               <span class="tr">Ağu 2020 - Şub 2022 | İstanbul, Türkiye</span>
               <span class="en">Aug 2020 - Feb 2022 | Istanbul, Turkiye</span>
             </p>
             <ul class="bullets">
               <li>
-                <span class="tr"><strong>Test ve Doğrulama Desteği:</strong> Erken aşama ISP dağıtımları ve müşteri odaklı teknik girişimler için test ve doğrulama çalışmalarını destekledi.</span>
-                <span class="en"><strong>Validation Support:</strong> Supported testing and validation activities for early-stage ISP deployments and customer-facing technical initiatives.</span>
+                <span class="tr">Erken aşama ISP dağıtımları ve müşteri odaklı teknik projelerde doğrulama, troubleshooting, teknik dokümantasyon ve yapılandırılmış operasyonel takip faaliyetlerine katkı sağladı.</span>
+                <span class="en">Supported early-stage ISP deployments and customer-facing technical initiatives through validation, troubleshooting, technical documentation, and structured operational follow-up.</span>
               </li>
               <li>
-                <span class="tr"><strong>Hata Takibi ve Dokümantasyon:</strong> Yapılandırılmış sorun analizi, hata iletişimi ve teknik dokümantasyon akışlarına katkı sağladı.</span>
-                <span class="en"><strong>Issue Tracking &amp; Documentation:</strong> Contributed to structured issue analysis, defect communication, and technical documentation workflows.</span>
+                <span class="tr">Müşteri ve saha bulgularını Jira kayıtlarına, doğrulama notlarına, yeniden üretilebilir teknik kanıtlara ve ekipler arası takip aksiyonlarına dönüştürdü.</span>
+                <span class="en">Converted customer and field findings into Jira records, validation notes, reproducible technical evidence, and cross-functional follow-up actions.</span>
               </li>
               <li>
-                <span class="tr"><strong>Teknik Destek Operasyonları:</strong> Kurum içi ekiplerle birlikte çalışarak operasyonel ortamlardaki dağıtım ve sistem sorunlarının araştırılması ve çözümüne katkı verdi.</span>
-                <span class="en"><strong>Technical Support Operations:</strong> Worked with internal teams to investigate and resolve deployment and system issues in operational environments.</span>
-              </li>
-              <li>
-                <span class="tr"><strong>Sistem Analizi Temeli:</strong> Embedded sistemler, bağlantı teknolojileri ve ağ yapıları üzerinde güçlü bir troubleshooting temeli oluşturdu.</span>
-                <span class="en"><strong>Foundation in System Analysis:</strong> Built strong troubleshooting capability across embedded, connectivity, and network-related systems.</span>
+                <span class="tr">Log inceleme, API destekli kontroller, SQL sorguları, bağlantı ve cihaz-bulut davranışı analizi ile bağlantılı sistemlerde güçlü bir sorun analiz temeli oluşturdu.</span>
+                <span class="en">Built a strong foundation in connected-system troubleshooting through log investigation, API-supported checks, SQL querying, and analysis of connectivity and device-to-cloud behavior.</span>
               </li>
             </ul>
           </div>
@@ -831,59 +865,14 @@
 
       <div class="side-section">
         <h3 class="side-title">
-          <span class="tr">Teknik Yetkinlikler</span>
-          <span class="en">Technical Skills</span>
+          <span class="tr">Uygun Roller</span>
+          <span class="en">Target Roles</span>
         </h3>
-        <div class="skill-item">
-          <span class="label">
-            <span class="tr">Araçlar</span>
-            <span class="en">Tools</span>
-          </span>
-          <span class="value">Jira, API testing, SQL querying, MS Office</span>
-        </div>
-        <div class="skill-item">
-          <span class="label">Testing</span>
-          <span class="value">
-            <span class="tr">Manuel test, firmware doğrulama, sürüm doğrulama, hata takibi, test senaryolarının uygulanması</span>
-            <span class="en">Manual testing, firmware validation, release validation, defect tracking, test scenario execution</span>
-          </span>
-        </div>
-        <div class="skill-item">
-          <span class="label">Troubleshooting</span>
-          <span class="value">
-            <span class="tr">SSH, log analizi, kök neden analizi, üretim ortamı sorunlarının incelenmesi</span>
-            <span class="en">SSH, log analysis, root cause analysis, production issue investigation</span>
-          </span>
-        </div>
-        <div class="skill-item">
-          <span class="label">
-            <span class="tr">Sistemler</span>
-            <span class="en">Systems</span>
-          </span>
-          <span class="value">
-            <span class="tr">Wi-Fi, mesh ağları, cihaz-bulut bağlantısı, gömülü ve ağ bağlantılı sistemler</span>
-            <span class="en">Wi-Fi, mesh, device-to-cloud connectivity, embedded and networked systems</span>
-          </span>
-        </div>
-        <div class="skill-item">
-          <span class="label">
-            <span class="tr">Programlama</span>
-            <span class="en">Programming</span>
-          </span>
-          <span class="value">Python, JavaScript, C, C++</span>
-        </div>
-      </div>
-
-      <div class="side-section">
-        <h3 class="side-title">
-          <span class="tr">Güçlü Yönler</span>
-          <span class="en">Core Strengths</span>
-        </h3>
-        <div class="skill-item"><span class="value"><span class="tr">Problem çözme</span><span class="en">Problem solving</span></span></div>
-        <div class="skill-item"><span class="value"><span class="tr">Yapılandırılmış çalışma disiplini</span><span class="en">Structured execution</span></span></div>
-        <div class="skill-item"><span class="value"><span class="tr">Ekipler arası koordinasyon</span><span class="en">Cross-functional coordination</span></span></div>
-        <div class="skill-item"><span class="value"><span class="tr">Paydaş iletişimi</span><span class="en">Stakeholder communication</span></span></div>
-        <div class="skill-item"><span class="value"><span class="tr">Sahiplenme yaklaşımı</span><span class="en">Ownership mindset</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Teknik Destek Mühendisi</span><span class="en">Technical Support Engineer</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Saha Uygulama Mühendisi</span><span class="en">Field Application Engineer</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">QA / Test Mühendisi</span><span class="en">QA / Test Engineer</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Sistem Doğrulama Mühendisi</span><span class="en">System Validation Engineer</span></span></div>
+        <div class="skill-item"><span class="value"><span class="tr">Üretim / Operasyon Desteği</span><span class="en">Production / Operations Support</span></span></div>
       </div>
 
       <div class="side-section">
@@ -891,16 +880,23 @@
           <span class="tr">Referans</span>
           <span class="en">Reference</span>
         </h3>
-        <div class="skill-item"><span class="value">Oğuz Demirtaş</span></div>
-        <div class="skill-item"><span class="value"><span class="tr">Baş(Principal) Saha Uygulama Mühendisi</span><span class="en">Principal Field Application Engineer</span></span></div>
-        <div class="skill-item"><span class="value"><span class="tr">AirTies Kablosuz İletişim</span><span class="en">AirTies Wireless Networks</span></span></div>
-        <div class="skill-item"><span class="value">+90 530 977 03 34</span></div>
-      <div>
+        <div class="skill-item">
+          <span class="value">
+            <span class="tr">Talep halinde paylaşılır</span>
+            <span class="en">Available upon request</span>
+          </span>
+        </div>
+      </div>
     </aside>
 
     <main class="main">
       <h1 class="name">Ata Mert Erdihan</h1>
+      <p class="headline">
+        <span class="tr">Elektrik ve Elektronik Mühendisi | Teknik Destek, QA, Saha Uygulamaları ve Ürün Doğrulama</span>
+        <span class="en">Electrical &amp; Electronics Engineer | Technical Support, QA, Field Applications &amp; Product Validation</span>
+      </p>
       <div class="top-rule"></div>
+
       <section class="section">
         <h2 class="section-title">
           <span class="tr">Eğitim</span>
@@ -918,8 +914,8 @@
               <span class="en">Electrical and Electronics Engineering</span>
             </p>
             <p class="minor">
-              <span class="tr">Mühendislik Fakültesi | Lisans Derecesi</span>
-              <span class="en">Engineering Faculty | Bachelor's Degree</span>
+              <span class="tr">Mühendislik Fakültesi | Lisans | %100 İngilizce eğitim programı | %50 burs</span>
+              <span class="en">Engineering Faculty | Bachelor's Degree | 100% English-taught program | 50% scholarship</span>
             </p>
           </div>
         </div>
@@ -934,15 +930,17 @@
         <div class="entry">
           <div class="entry-meta">2018</div>
           <div>
-            <span class="tr"><p class="entry-org">AirTies Kablosuz İletişim</p></span>
-            <span class="en"><p class="entry-org">AirTies Wireless Networks</p></span>
+            <p class="entry-org">
+              <span class="tr">AirTies Kablosuz İletişim</span>
+              <span class="en">AirTies Wireless Networks</span>
+            </p>
             <p class="entry-role">
-              <span class="tr">Saha Uygulama Mühendisi Stajyeri</span>
+              <span class="tr">Intern Field Application Engineer</span>
               <span class="en">Intern Field Application Engineer</span>
             </p>
             <p class="minor">
-              <span class="tr">Müşteri projelerinde mühendislik ekiplerine destek verirken test, dokümantasyon ve teknik operasyon faaliyetlerine katkı sağladı.</span>
-              <span class="en">Supported testing, documentation, and technical operations activities while assisting engineering teams in customer project work.</span>
+              <span class="tr">Müşteri projelerinde test, dokümantasyon ve teknik operasyon faaliyetlerini destekledi; saha uygulama mühendisliği süreçlerini gözlemledi.</span>
+              <span class="en">Supported testing, documentation, and technical operations activities for customer projects; observed field application engineering workflows.</span>
             </p>
           </div>
         </div>
@@ -951,16 +949,16 @@
           <div class="entry-meta">2017</div>
           <div>
             <p class="entry-org">
-              <span class="tr">MEG Elektrik ve Elektronik</span>
+              <span class="tr">MEG Elektrik Elektronik</span>
               <span class="en">MEG Electric Electronic</span>
             </p>
             <p class="entry-role">
-              <span class="tr">Yazılım Mühendisi Stajyeri</span>
-              <span class="en">Intern Software Engineer</span>
+              <span class="tr">Software Engineer Intern</span>
+              <span class="en">Software Engineer Intern</span>
             </p>
             <p class="minor">
-              <span class="tr">C++ tabanlı uzaktan izleme cihazları ve sensör odaklı alarm kurguları üzerinde çalıştı; gerçek zamanlı izleme ve SMS tabanlı uyarı mantıklarını destekledi.</span>
-              <span class="en">Worked on C++-based remote monitoring devices and sensor-driven alert concepts, supporting real-time monitoring and SMS-based alert logic.</span>
+              <span class="tr">C++ tabanlı uzaktan izleme ve sensör odaklı uyarı kurgularına katkı sağladı; gerçek zamanlı izleme ve SMS uyarı mantıkları üzerinde çalıştı.</span>
+              <span class="en">Contributed to C++-based remote monitoring and sensor-driven alert concepts, including real-time monitoring and SMS alert logic.</span>
             </p>
           </div>
         </div>
@@ -968,13 +966,13 @@
         <div class="entry">
           <div class="entry-meta">2016</div>
           <div>
-            <p class="entry-org">Six Flags – San Antonio, USA</p>
+            <p class="entry-org">Six Flags - San Antonio, USA</p>
             <p class="entry-role">
-              <span class="tr">Operatör</span>
+              <span class="tr">Ride Operator</span>
               <span class="en">Ride Operator</span>
             </p>
             <p class="minor">
-              <span class="tr">Güvenlik kontrollerini yürüttü, ziyaretçi iletişimini yönetti ve hızlı tempolu bir ortamda günlük operasyonların sorunsuz şekilde ilerlemesini sağladı.</span>
+              <span class="tr">Güvenlik kontrollerini yürüttü, ziyaretçi iletişimini yönetti ve hızlı tempolu operasyon ortamında günlük süreçlerin düzenli ilerlemesini sağladı.</span>
               <span class="en">Performed safety checks, managed guest interactions, and maintained smooth daily operations in a fast-paced environment.</span>
             </p>
           </div>
@@ -991,12 +989,12 @@
           <div class="entry-meta">2026</div>
           <div>
             <p class="entry-org">
-              <span class="tr">Torvex Last Defense - Mobil Oyun (iOS)</span>
-              <span class="en">Torvex Last Defense - Mobile Game (iOS)</span>
+              <span class="tr">Torvex Last Defense - iOS Mobil Oyun</span>
+              <span class="en">Torvex Last Defense - iOS Mobile Game</span>
             </p>
             <p class="minor">
-              <span class="tr">Swift ve SpriteKit kullanarak match-3 ve tower defense hibrit bir oyun tasarladı ve geliştirdi; oyun sistemleri, dengeleme, ilerleme ve yinelemeli test iyileştirmeleri üzerinde çalıştı.</span>
-              <span class="en">Designed and developed a match-3 and tower defense hybrid game using Swift and SpriteKit, covering gameplay systems, balancing, progression, and iterative testing improvements.</span>
+              <span class="tr">Swift ve SpriteKit kullanarak match-3 ve tower-defense hibritinde yayımlanmamış bir oyun prototipi geliştirdi; oyun döngüsü, dengeleme, ilerleme, hata ayıklama, telemetry review ve yinelemeli test süreçleri üzerinde çalıştı.</span>
+              <span class="en">Designed and developed an unpublished match-3 and tower-defense hybrid prototype using Swift and SpriteKit; worked on gameplay loops, balancing, progression, debugging, telemetry review, and iterative testing.</span>
             </p>
           </div>
         </div>
@@ -1009,8 +1007,8 @@
               <span class="en">WALKKEE - Smart Home Security &amp; Monitoring System</span>
             </p>
             <p class="minor">
-              <span class="tr">Sensör entegrasyonu, olay bazlı uyarılar, gerçek zamanlı elektrik izleme ve uzaktan görünürlük sağlayan cloud-connected bir izleme sistemi tasarladı.</span>
-              <span class="en">Designed a cloud-connected monitoring system integrating sensors, event-based alerting, real-time electricity monitoring, and remote visibility for residential safety scenarios.</span>
+              <span class="tr">Sensörler, olay bazlı uyarılar, elektrik tüketimi takibi ve uzaktan görünürlük sağlayan cloud-connected bir izleme konsepti tasarladı; sistem etkileşimleri, uyarı akışları ve veri görünürlüğüne odaklandı.</span>
+              <span class="en">Designed a cloud-connected monitoring concept integrating sensors, event-based alerts, electricity-consumption tracking, and remote visibility, with focus on system interactions, alert flows, and data visibility.</span>
             </p>
           </div>
         </div>
@@ -1023,8 +1021,8 @@
               <span class="en">CIZBIZ - Obstacle Avoiding Robot</span>
             </p>
             <p class="minor">
-              <span class="tr">Ultrasonik algılama ve embedded control logic kullanarak engel algılama ve engelden kaçınma yeteneğine sahip sensör tabanlı bir robot geliştirdi.</span>
-              <span class="en">Developed a sensor-based robot capable of obstacle detection and avoidance using ultrasonic sensing and embedded control logic.</span>
+              <span class="tr">Ultrasonik sensör tabanlı engel algılama ve kaçınma davranışı olan akademik robot projesi geliştirdi; sensör tepkisi, embedded kontrol mantığı ve temel troubleshooting üzerine çalıştı.</span>
+              <span class="en">Developed an academic ultrasonic-sensor-based robot with obstacle detection and avoidance behavior, focusing on sensor response, embedded control logic, and basic troubleshooting.</span>
             </p>
           </div>
         </div>
@@ -1038,45 +1036,45 @@
         <div class="skills-grid">
           <div class="skill-block">
             <h4>
-              <span class="tr">Test ve Doğrulama</span>
-              <span class="en">Testing &amp; Validation</span>
+              <span class="tr">Teknik Destek ve Müşteri Koordinasyonu</span>
+              <span class="en">Technical Support &amp; Customer Coordination</span>
             </h4>
             <p>
-              <span class="tr">Firmware doğrulama, manuel test, sürüm doğrulama, senaryo bazlı testler, rollout takibi ve hata odaklı inceleme</span>
-              <span class="en">Firmware validation, manual testing, release validation, scenario-based testing, rollout monitoring, and defect-oriented investigation.</span>
+              <span class="tr">Müşteri taleplerini netleştirme, teknik etki analizi, eskalasyon, çözüm takibi, durum güncellemesi ve ekipler arası koordinasyon.</span>
+              <span class="en">Customer request clarification, technical impact analysis, escalation, resolution follow-up, status communication, and cross-functional coordination.</span>
             </p>
           </div>
 
           <div class="skill-block">
             <h4>
-              <span class="tr">Hata Ayıklama ve Analiz</span>
-              <span class="en">Debugging &amp; Analysis</span>
+              <span class="tr">Test, Doğrulama ve Sürüm Desteği</span>
+              <span class="en">Testing, Validation &amp; Release Support</span>
             </h4>
             <p>
-              <span class="tr">Log analizi, kök neden analizi, sorun izolasyonu, üretim ortamında hata ayıklama ve yapılandırılmış teknik inceleme</span>
-              <span class="en">Log analysis, root cause analysis, issue isolation, production troubleshooting, and structured technical investigation.</span>
+              <span class="tr">Manuel test, senaryo bazlı doğrulama, firmware ve özellik kontrolleri, rollout izleme, pass/fail dokümantasyonu ve hata yeniden üretimi.</span>
+              <span class="en">Manual testing, scenario-based validation, firmware and feature checks, rollout monitoring, pass/fail documentation, and defect reproduction.</span>
             </p>
           </div>
 
           <div class="skill-block">
             <h4>
-              <span class="tr">Sistemler ve Bağlantı Teknolojileri</span>
-              <span class="en">Systems &amp; Connectivity</span>
+              <span class="tr">API, Veri ve Sorun Analizi</span>
+              <span class="en">API, Data &amp; Issue Investigation</span>
             </h4>
             <p>
-              <span class="tr">Wi-Fi ve mesh ağları, cihaz-bulut iletişimi, IoT tipi sistem davranışları ve bağlantı sorunlarının giderilmesi</span>
-              <span class="en">Wi-Fi and mesh networks, device-to-cloud communication, IoT-style system behavior, and connectivity troubleshooting.</span>
+              <span class="tr">Postman API kontrolü, SQL/MySQL sorguları, log analizi, SSH/Telnet incelemeleri, üretim verisi değerlendirme ve Jira tabanlı teknik kanıt yönetimi.</span>
+              <span class="en">Postman API checks, SQL/MySQL queries, log analysis, SSH/Telnet investigation, production-data review, and Jira-based technical evidence management.</span>
             </p>
           </div>
 
           <div class="skill-block">
             <h4>
-              <span class="tr">Yürütme ve İş Birliği</span>
-              <span class="en">Execution &amp; Collaboration</span>
+              <span class="tr">Sistemler ve Programlama Temeli</span>
+              <span class="en">Systems &amp; Programming Foundation</span>
             </h4>
             <p>
-              <span class="tr">Hata takibi, paydaş iletişimi, teknik dokümantasyon, müşteri odaklı koordinasyon ve ekipler arası iş birliği</span>
-              <span class="en">Defect tracking, stakeholder communication, technical documentation, customer-facing coordination, and cross-functional execution.</span>
+              <span class="tr">Wi-Fi, mesh, CPE, ISP ortamları, cihaz-bulut iletişimi, bağlantılı cihaz sistemleri; Python, JavaScript, C, C++ ve Swift temeli.</span>
+              <span class="en">Wi-Fi, mesh, CPE, ISP environments, device-to-cloud communication, connected-device systems; foundation in Python, JavaScript, C, C++, and Swift.</span>
             </p>
           </div>
         </div>
